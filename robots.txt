@@ -1,3 +1,0 @@
-# https://sham-e-ansari.github.io
-User-agent: *
-Disallow:
