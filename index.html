@@ -15,6 +15,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#awards">Awards</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -218,8 +219,48 @@
 
 <hr class="divider">
 
+<section class="section" id="certifications">
+  <div class="section-head"><span class="s-num">05</span><h2 class="s-title">Certifications</h2></div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date">Nov 2025</div>
+      <div>
+        <p class="tl-company">Institute of Business Administration (IBA) &middot; University of Dhaka</p>
+        <p class="tl-role">Advanced Certificate for Management Professionals (ACMP) 4.0</p>
+        <p class="tl-desc"></p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Jun 2020</div>
+      <div>
+        <p class="tl-company">Coursera</p>
+        <p class="tl-role">Natural Language Processing in TensorFlow</p>
+        <p class="tl-desc">Credential ID: 6ZANDPMJL976</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Apr 2020</div>
+      <div>
+        <p class="tl-company">Coursera</p>
+        <p class="tl-role">Neural Networks and Deep Learning</p>
+        <p class="tl-desc">Credential ID: RAAY7E3VQQ8Z</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Mar 2020</div>
+      <div>
+        <p class="tl-company">Coursera</p>
+        <p class="tl-role">Data Visualization with Python</p>
+        <p class="tl-desc">Credential ID: MAEPTFAVBMJA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <section class="section" id="education">
-  <div class="section-head"><span class="s-num">05</span><h2 class="s-title">Education</h2></div>
+  <div class="section-head"><span class="s-num">06</span><h2 class="s-title">Education</h2></div>
   <div class="timeline">
     <div class="tl-item">
       <div class="tl-date">2015 &mdash; 2019</div>
@@ -258,7 +299,7 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       LinkedIn
     </a>
-    <a href="mailto:saprince93@gmail.com" class="c-link">
+    <a href="/cdn-cgi/l/email-protection#13607263617a7d70762a2053747e727a7f3d707c7e" class="c-link">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
       Email
     </a>
@@ -274,7 +315,7 @@
   <span>Process Automation &amp; R&amp;D &middot; BRAC Bank PLC</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   var nav = document.getElementById('nav');
   window.addEventListener('scroll', function(){
@@ -291,13 +332,16 @@
   });
 
   var items = document.querySelectorAll('.tl-item');
+  items.forEach(function(el){ el.classList.add('animate'); });
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
       });
-    },{threshold:0.1});
+    },{threshold:0, rootMargin:'0px 0px -10px 0px'});
     items.forEach(function(el){ io.observe(el); });
+    // Fallback: show all items after 1s in case observer doesn't fire
+    setTimeout(function(){ items.forEach(function(el){ el.classList.add('show'); }); }, 800);
   } else {
     items.forEach(function(el){ el.classList.add('show'); });
   }
@@ -309,11 +353,4 @@
     var cur = '';
     secs.forEach(function(s){ if(y >= s.offsetTop) cur = s.id; });
     navAs.forEach(function(a){
-      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold)' : '';
-    });
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-})();
-</script>
-</body>
-</html>
+      a.style.color = a.getAttribute
