@@ -9,7 +9,7 @@
   }).join('');
 
   var hero = content.hero;
-  document.getElementById('heroText').innerHTML = '<p class="hero-eyebrow">' + hero.eyebrow + '</p><h1 class="hero-name">' + hero.titleFirst + '<br><i>' + hero.titleSecond + '</i></h1><p class="hero-sub"><strong>' + hero.lead + '</strong><br>' + hero.description + '</p><div class="hero-actions"><a href="#contact" class="btn">' + hero.primaryAction + '</a><a href="#experience" class="btn-text">' + hero.secondaryAction + '</a></div>';
+  document.getElementById('heroText').innerHTML = '<p class="hero-eyebrow">' + hero.eyebrow + '</p><h1 class="hero-name">' + hero.titleFirst + '<br><i>' + hero.titleSecond + '</i></h1><p class="hero-sub"><strong>' + hero.lead + '</strong><br>' + hero.description + '</p><div class="hero-actions"><a href="#contact" class="btn">' + hero.primaryAction + '</a><a href="' + content.cv + '" class="btn" download>Download CV</a><a href="#experience" class="btn-text">' + hero.secondaryAction + '</a></div>';
   document.getElementById('heroPhoto').innerHTML = '<img src="' + content.photo.src + '" alt="' + content.photo.alt + '">';
 
   function sectionHead(number, title) {
@@ -36,6 +36,19 @@
 
   var nav = document.getElementById('nav');
   window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  var themeToggle = document.getElementById('themeToggle');
+  var savedTheme = localStorage.getItem('portfolio-theme');
+  function setTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    var isLight = theme === 'light';
+    themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+  }
+  setTheme(savedTheme === 'light' ? 'light' : 'dark');
+  themeToggle.addEventListener('click', function () {
+    var nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    localStorage.setItem('portfolio-theme', nextTheme);
+  });
   var toggle = document.getElementById('navToggle');
   var links = document.getElementById('navLinks');
   toggle.addEventListener('click', function () { links.classList.toggle('open'); });

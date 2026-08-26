@@ -4,9 +4,10 @@ window.portfolioContent = {
   name: 'Sham-E-Ansari',
   initials: 'S · A',
   photo: {
-    src: 'profile.jpg',
+    src: 'resources/profile.jpg',
     alt: 'Sham-E-Ansari'
   },
+  cv: 'resources/SHAM.pdf',
   hero: {
     eyebrow: 'Unit Head, RPA Development · BRAC Bank PLC',
     titleFirst: 'Sham-E-',
