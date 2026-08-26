@@ -47,13 +47,13 @@ window.portfolioContent = {
   },
   awards: [
     ['Aug 2026', 'BRAC Bank PLC · Technology Division', 'Spotlight Award', 'For Outstanding Performance in Automating the Bangla QR Merchant Onboarding Process through RPA.'],
-    ['Aug 2025', 'Financial Excellence Limited · via BRAC Bank PLC', 'Certificate of Completion - Project Management', 'Completed an intensive programme covering Agile, Waterfall, and Scrum methodologies, along with project budgeting, timeline planning, risk analysis, and stakeholder management.'],
     ['Jul 2025', 'BRAC Bank PLC · Operations Division', 'Certificate of Appreciation', 'Awarded by the DMD & Head of Operations for exceptional performance and contributions within the Process Automation & R&D team.'],
     ['Apr 2025', 'BRAC Bank PLC', 'Learning Luminaries Award 2024 - Unsung Hero', 'Recognised in the Unsung Hero category. Presented by the MD & CEO, CTO, and Head of HR in recognition of outstanding contributions to learning and development initiatives.'],
     ['Nov 2018', 'BUP ICT FEST 2018', '1st Runner Up - Hackathon Category', 'Achieved 1st Runner Up in the hackathon competition, demonstrating strong problem-solving and rapid development skills under competitive conditions.']
   ],
   certifications: [
     ['Nov 2025', 'Institute of Business Administration (IBA) · University of Dhaka', 'Advanced Certificate for Management Professionals (ACMP) 4.0', ''],
+    ['Aug 2025', 'Financial Excellence Limited · via BRAC Bank PLC', 'Certificate of Completion - Project Management', 'Completed an intensive programme covering Agile, Waterfall, and Scrum methodologies, along with project budgeting, timeline planning, risk analysis, and stakeholder management.'],
     ['Jun 2020', 'Coursera', 'Natural Language Processing in TensorFlow', 'Credential ID: 6ZANDPMJL976'],
     ['Apr 2020', 'Coursera', 'Neural Networks and Deep Learning', 'Credential ID: RAAY7E3VQQ8Z'],
     ['Mar 2020', 'Coursera', 'Data Visualization with Python', 'Credential ID: MAEPTFAVBMJA']

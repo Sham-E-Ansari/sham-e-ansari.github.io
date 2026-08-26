@@ -3,7 +3,6 @@
   var sectionNames = [['about', 'About'], ['experience', 'Experience'], ['skills', 'Skills'], ['awards', 'Awards'], ['certifications', 'Certifications'], ['education', 'Education'], ['contact', 'Contact']];
 
   document.title = content.siteTitle;
-  document.getElementById('navLogo').textContent = content.initials;
   document.getElementById('navLinks').innerHTML = sectionNames.map(function (section) {
     return '<li><a href="#' + section[0] + '">' + section[1] + '</a></li>';
   }).join('');
@@ -20,8 +19,34 @@
       return '<div class="tl-item"><div class="tl-date">' + item[0] + '</div><div><p class="tl-company">' + item[1] + '</p><p class="tl-role">' + item[2] + '</p><p class="tl-desc">' + item[3] + '</p></div></div>';
     }).join('') + '</div>';
   }
+  function dateFromMonthYear(value) {
+    var parts = value.match(/^([A-Za-z]{3}) (\d{4})/);
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return new Date(Number(parts[2]), months.indexOf(parts[1]), 1);
+  }
+  function yearsSince(startDate) {
+    var today = new Date();
+    var months = (today.getFullYear() - startDate.getFullYear()) * 12 + today.getMonth() - startDate.getMonth();
+    return Math.floor(months / 12);
+  }
+  var experienceStart = content.experience.reduce(function (earliest, item) {
+    var startDate = dateFromMonthYear(item[0]);
+    return !earliest || startDate < earliest ? startDate : earliest;
+  }, null);
+  var bracBankStart = content.experience.filter(function (item) {
+    return item[1].indexOf('BRAC Bank') !== -1;
+  }).reduce(function (earliest, item) {
+    var startDate = dateFromMonthYear(item[0]);
+    return !earliest || startDate < earliest ? startDate : earliest;
+  }, null);
+  var stats = [
+    [yearsSince(experienceStart) + '+', 'Years of experience'],
+    [yearsSince(bracBankStart) + '+', 'Years at BRAC Bank'],
+    [String(content.awards.length), 'Awards & recognitions'],
+    ['CSE', 'BSc, AUST 2019']
+  ];
 
-  document.getElementById('aboutContent').innerHTML = sectionHead('01', 'About') + '<div class="about-wrap"><div class="about-text">' + content.about.paragraphs.map(function (paragraph) { return '<p>' + paragraph + '</p>'; }).join('') + '</div><div class="about-col-divider"></div><div class="about-stats">' + content.about.stats.map(function (stat) { return '<div class="stat"><span class="stat-n">' + stat[0] + '</span><span class="stat-l">' + stat[1] + '</span></div>'; }).join('') + '</div></div>';
+  document.getElementById('aboutContent').innerHTML = sectionHead('01', 'About') + '<div class="about-wrap"><div class="about-text">' + content.about.paragraphs.map(function (paragraph) { return '<p>' + paragraph + '</p>'; }).join('') + '</div><div class="about-col-divider"></div><div class="about-stats">' + stats.map(function (stat) { return '<div class="stat"><span class="stat-n">' + stat[0] + '</span><span class="stat-l">' + stat[1] + '</span></div>'; }).join('') + '</div></div>';
   document.getElementById('experienceContent').innerHTML = sectionHead('02', 'Experience') + timeline(content.experience);
   document.getElementById('skillsContent').innerHTML = sectionHead('03', 'Skills') + '<div class="skills-wrap">' + Object.keys(content.skills).map(function (category) { return '<div><p class="skill-cat-label">' + category + '</p><div class="tags">' + content.skills[category].map(function (skill) { return '<span class="tag">' + skill + '</span>'; }).join('') + '</div></div>'; }).join('') + '</div>';
   document.getElementById('awardsContent').innerHTML = sectionHead('04', 'Honors & Awards') + timeline(content.awards);
