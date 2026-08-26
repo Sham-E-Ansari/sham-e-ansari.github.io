@@ -1,53 +1,62 @@
 (function () {
+  var content = window.portfolioContent;
+  var sectionNames = [['about', 'About'], ['experience', 'Experience'], ['skills', 'Skills'], ['awards', 'Awards'], ['certifications', 'Certifications'], ['education', 'Education'], ['contact', 'Contact']];
 
-  // ── Footer year ──
+  document.title = content.siteTitle;
+  document.getElementById('navLogo').textContent = content.initials;
+  document.getElementById('navLinks').innerHTML = sectionNames.map(function (section) {
+    return '<li><a href="#' + section[0] + '">' + section[1] + '</a></li>';
+  }).join('');
+
+  var hero = content.hero;
+  document.getElementById('heroText').innerHTML = '<p class="hero-eyebrow">' + hero.eyebrow + '</p><h1 class="hero-name">' + hero.titleFirst + '<br><i>' + hero.titleSecond + '</i></h1><p class="hero-sub"><strong>' + hero.lead + '</strong><br>' + hero.description + '</p><div class="hero-actions"><a href="#contact" class="btn">' + hero.primaryAction + '</a><a href="#experience" class="btn-text">' + hero.secondaryAction + '</a></div>';
+  document.getElementById('heroPhoto').innerHTML = '<img src="' + content.photo.src + '" alt="' + content.photo.alt + '">';
+  document.getElementById('scrollLabel').textContent = hero.scrollLabel;
+
+  function sectionHead(number, title) {
+    return '<div class="section-head"><span class="s-num">' + number + '</span><h2 class="s-title">' + title + '</h2></div>';
+  }
+  function timeline(items) {
+    return '<div class="timeline">' + items.map(function (item) {
+      return '<div class="tl-item"><div class="tl-date">' + item[0] + '</div><div><p class="tl-company">' + item[1] + '</p><p class="tl-role">' + item[2] + '</p><p class="tl-desc">' + item[3] + '</p></div></div>';
+    }).join('') + '</div>';
+  }
+
+  document.getElementById('aboutContent').innerHTML = sectionHead('01', 'About') + '<div class="about-wrap"><div class="about-text">' + content.about.paragraphs.map(function (paragraph) { return '<p>' + paragraph + '</p>'; }).join('') + '</div><div class="about-col-divider"></div><div class="about-stats">' + content.about.stats.map(function (stat) { return '<div class="stat"><span class="stat-n">' + stat[0] + '</span><span class="stat-l">' + stat[1] + '</span></div>'; }).join('') + '</div></div>';
+  document.getElementById('experienceContent').innerHTML = sectionHead('02', 'Experience') + timeline(content.experience);
+  document.getElementById('skillsContent').innerHTML = sectionHead('03', 'Skills') + '<div class="skills-wrap">' + Object.keys(content.skills).map(function (category) { return '<div><p class="skill-cat-label">' + category + '</p><div class="tags">' + content.skills[category].map(function (skill) { return '<span class="tag">' + skill + '</span>'; }).join('') + '</div></div>'; }).join('') + '</div>';
+  document.getElementById('awardsContent').innerHTML = sectionHead('04', 'Honors & Awards') + timeline(content.awards);
+  document.getElementById('certificationsContent').innerHTML = sectionHead('05', 'Certifications') + timeline(content.certifications);
+  document.getElementById('educationContent').innerHTML = sectionHead('06', 'Education') + timeline(content.education);
+
+  var contact = content.contact;
+  document.getElementById('contactContent').innerHTML = '<p class="contact-headline">' + contact.headlineFirst + '<br><i>' + contact.headlineSecond + '</i></p><p class="contact-sub">' + contact.description + '</p><div class="contact-links">' + contact.links.map(function (link) { return '<a href="' + link[1] + '" target="_blank" rel="noopener" class="c-link">' + link[0] + '</a>'; }).join('') + '</div>';
   document.getElementById('footer-year').textContent = new Date().getFullYear();
+  document.getElementById('footer-name').textContent = content.name;
+  document.getElementById('footer-content').textContent = content.footer;
 
-  // ── Nav scroll shadow ──
   var nav = document.getElementById('nav');
-  window.addEventListener('scroll', function () {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  // ── Mobile nav toggle ──
+  window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
   var toggle = document.getElementById('navToggle');
   var links = document.getElementById('navLinks');
-  toggle.addEventListener('click', function () {
-    links.classList.toggle('open');
-  });
-  links.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () { links.classList.remove('open'); });
-  });
+  toggle.addEventListener('click', function () { links.classList.toggle('open'); });
+  links.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', function () { links.classList.remove('open'); }); });
 
-  // ── Timeline scroll-in animation ──
   var items = document.querySelectorAll('.tl-item');
-  items.forEach(function (el) { el.classList.add('animate'); });
+  items.forEach(function (item) { item.classList.add('animate'); });
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px -10px 0px' });
-    items.forEach(function (el) { io.observe(el); });
-    // Fallback: show all items after 800ms in case observer doesn't fire
-    setTimeout(function () {
-      items.forEach(function (el) { el.classList.add('show'); });
-    }, 800);
-  } else {
-    items.forEach(function (el) { el.classList.add('show'); });
-  }
+    var observer = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('show'); observer.unobserve(entry.target); } }); }, { threshold: 0, rootMargin: '0px 0px -10px 0px' });
+    items.forEach(function (item) { observer.observe(item); });
+    setTimeout(function () { items.forEach(function (item) { item.classList.add('show'); }); }, 800);
+  } else { items.forEach(function (item) { item.classList.add('show'); }); }
 
-  // ── Active nav link highlight on scroll ──
-  var secs = document.querySelectorAll('[id]');
-  var navAs = document.querySelectorAll('.nav-links a');
-  function onScroll() {
-    var y = window.scrollY + 120;
-    var cur = '';
-    secs.forEach(function (s) { if (y >= s.offsetTop) cur = s.id; });
-    navAs.forEach(function (a) {
-      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold)' : '';
-    });
+  var sections = document.querySelectorAll('[id]');
+  var navLinks = document.querySelectorAll('.nav-links a');
+  function updateActiveLink() {
+    var current = '';
+    sections.forEach(function (section) { if (window.scrollY + 120 >= section.offsetTop) current = section.id; });
+    navLinks.forEach(function (link) { link.style.color = link.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
 })();

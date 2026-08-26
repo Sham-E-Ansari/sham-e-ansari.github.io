@@ -3,22 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sham-E-Ansari &middot; Portfolio</title>
+<title></title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav id="nav">
-  <a href="#top" class="nav-logo">S &middot; A</a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#awards">Awards</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <a href="#top" class="nav-logo" id="navLogo"></a>
+  <ul class="nav-links" id="navLinks"></ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -28,293 +20,63 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="hero-text">
-      <p class="hero-eyebrow">Unit Head, RPA Development &nbsp;&bull;&nbsp; BRAC Bank PLC</p>
-      <h1 class="hero-name">Sham&#8209;E&#8209;<br><i>Ansari</i></h1>
-      <p class="hero-sub">
-        <strong>Process Automation &amp; R&amp;D, Technology Division.</strong><br>
-        Bridging technology and business through intelligent automation, strategic leadership, and a relentless drive for meaningful change.
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn">Get in Touch</a>
-        <a href="#experience" class="btn-text">View Experience &rarr;</a>
-      </div>
-    </div>
-    <div class="hero-photo-wrap">
-      <img src="profile.jpg" alt="Sham-E-Ansari">
-    </div>
+    <div class="hero-text" id="heroText"></div>
+    <div class="hero-photo-wrap" id="heroPhoto"></div>
   </div>
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
-    <span class="hero-scroll-text">scroll</span>
+    <span class="hero-scroll-text" id="scrollLabel"></span>
   </div>
 </section>
 
 <hr class="divider">
 
 <section class="section" id="about">
-  <div class="section-head"><span class="s-num">01</span><h2 class="s-title">About</h2></div>
-  <div class="about-wrap">
-    <div class="about-text">
-      <p>I'm <b>Sham-E-Ansari</b> &mdash; currently leading RPA Development at <b>BRAC Bank PLC</b> within the Process Automation &amp; R&amp;D department, using cutting-edge technology to streamline operations and boost efficiency across the organisation.</p>
-      <p>My journey in banking began in 2022 as a <b>Young Leader (Management Trainee Officer)</b>, giving me broad industry exposure before I rose to drive innovation and lead impactful automation projects.</p>
-      <p>Before banking, I built a strong technical foundation as an <b>IT Officer</b> and <b>Web Developer</b>, working on enterprise localisation projects and systems management.</p>
-      <p>I hold a <b>BSc in Computer Science &amp; Engineering</b> from Ahsanullah University of Science and Technology and I'm driven by continuous learning and bridging technology with better business outcomes.</p>
-    </div>
-    <div class="about-col-divider"></div>
-    <div class="about-stats">
-      <div class="stat"><span class="stat-n">6+</span><span class="stat-l">Years of experience</span></div>
-      <div class="stat"><span class="stat-n">4+</span><span class="stat-l">Years at BRAC Bank</span></div>
-      <div class="stat"><span class="stat-n">3</span><span class="stat-l">Awards &amp; recognitions</span></div>
-      <div class="stat"><span class="stat-n">CSE</span><span class="stat-l">BSc, AUST 2019</span></div>
-    </div>
-  </div>
+  <div id="aboutContent"></div>
 </section>
 
 <hr class="divider">
 
 <section class="section" id="experience">
-  <div class="section-head"><span class="s-num">02</span><h2 class="s-title">Experience</h2></div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-date">Sep 2025 &mdash; Present</div>
-      <div>
-        <p class="tl-company">BRAC Bank PLC &middot; Full-time</p>
-        <p class="tl-role">Unit Head, RPA Development</p>
-        <p class="tl-desc">Lead the strategy, planning, and execution of RPA initiatives across the organisation. Define and drive the automation roadmap to optimise and scale business processes. Manage and mentor a team of automation professionals, act as the primary liaison between senior stakeholders and the RPA team, and govern compliance, quality standards, and best practices across all automation solutions.</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Feb 2023 &mdash; Sep 2025</div>
-      <div>
-        <p class="tl-company">BRAC Bank PLC &middot; Full-time</p>
-        <p class="tl-role">Associate Manager, RPA Development</p>
-        <p class="tl-desc">Developed and implemented strategies to streamline business processes through automation. Established and maintained stakeholder relationships to identify improvement areas, collaborated with cross-functional teams for effective automation integration, and designed quality controls to ensure reliable, accurate, and compliant automation solutions.</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Feb 2022 &mdash; Jan 2023</div>
-      <div>
-        <p class="tl-company">BRAC Bank PLC &middot; Full-time &middot; Dhaka</p>
-        <p class="tl-role">Young Leader &mdash; Management Trainee Officer</p>
-        <p class="tl-desc">Gained a broad overview of the banking industry through on-the-job training across departments, classroom and online training programs, professional development modules, and cross-functional group projects.</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Dec 2020 &mdash; Oct 2021</div>
-      <div>
-        <p class="tl-company">GraphicPeople &middot; Contract &middot; Dhaka</p>
-        <p class="tl-role">Junior Web Developer</p>
-        <p class="tl-desc">Completed Pfizer and GSK localisation projects, performed bug fixing, and contributed to application development using Adobe Experience Manager (AEM) and modern web technologies.</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Jun 2020 &mdash; Nov 2020</div>
-      <div>
-        <p class="tl-company">GraphicPeople &middot; Contract &middot; Dhaka</p>
-        <p class="tl-role">Trainee Web Developer</p>
-        <p class="tl-desc">Focused on application development and deepened hands-on experience with Adobe Experience Manager (AEM) in a professional agency environment.</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Aug 2019 &mdash; Nov 2019</div>
-      <div>
-        <p class="tl-company">SAIR AIR BD LTD &middot; Full-time &middot; Gulshan, Dhaka</p>
-        <p class="tl-role">IT Officer</p>
-        <p class="tl-desc">Maintained the company website, developed an employee management system, provided end-user support, managed website content, and kept current with the latest web development trends and best practices.</p>
-      </div>
-    </div>
-  </div>
+  <div id="experienceContent"></div>
 </section>
 
 <hr class="divider">
 
 <section class="section" id="skills">
-  <div class="section-head"><span class="s-num">03</span><h2 class="s-title">Skills</h2></div>
-  <div class="skills-wrap">
-    <div>
-      <p class="skill-cat-label">Leadership &amp; Management</p>
-      <div class="tags">
-        <span class="tag">Team Leadership</span>
-        <span class="tag">Team Management</span>
-        <span class="tag">Project Management</span>
-        <span class="tag">Project Planning</span>
-      </div>
-    </div>
-    <div>
-      <p class="skill-cat-label">Automation &amp; AI</p>
-      <div class="tags">
-        <span class="tag">Robotic Process Automation (RPA)</span>
-        <span class="tag">Artificial Intelligence (AI)</span>
-        <span class="tag">Machine Learning</span>
-        <span class="tag">Adobe Experience Manager (AEM)</span>
-      </div>
-    </div>
-    <div>
-      <p class="skill-cat-label">Development</p>
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">PHP</span>
-        <span class="tag">PL/SQL</span>
-        <span class="tag">Web Development</span>
-        <span class="tag">Front-end Development</span>
-        <span class="tag">Application Development</span>
-        <span class="tag">Software Development</span>
-        <span class="tag">Git</span>
-        <span class="tag">Version Control</span>
-      </div>
-    </div>
-    <div>
-      <p class="skill-cat-label">Data &amp; Security</p>
-      <div class="tags">
-        <span class="tag">Database Management System (DBMS)</span>
-        <span class="tag">Database Design</span>
-        <span class="tag">Secure Coding</span>
-        <span class="tag">Application Security Architecture</span>
-      </div>
-    </div>
-  </div>
+  <div id="skillsContent"></div>
 </section>
 
 <hr class="divider">
 
 <section class="section" id="awards">
-  <div class="section-head"><span class="s-num">04</span><h2 class="s-title">Honors &amp; Awards</h2></div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-date">Aug 2025</div>
-      <div>
-        <p class="tl-company">Financial Excellence Limited &middot; via BRAC Bank PLC</p>
-        <p class="tl-role">Certificate of Completion &mdash; Project Management</p>
-        <p class="tl-desc">Completed an intensive programme covering Agile, Waterfall, and Scrum methodologies, along with project budgeting, timeline planning, risk analysis, and stakeholder management.</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Jul 2025</div>
-      <div>
-        <p class="tl-company">BRAC Bank PLC &middot; Technology Division</p>
-        <p class="tl-role">Certificate of Appreciation</p>
-        <p class="tl-desc">Awarded by the DMD &amp; Head of Operations for exceptional performance and contributions within the Process Automation &amp; R&amp;D team.</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Apr 2025</div>
-      <div>
-        <p class="tl-company">BRAC Bank PLC</p>
-        <p class="tl-role">Learning Luminaries Award 2024 &mdash; Unsung Hero</p>
-        <p class="tl-desc">Recognised in the Unsung Hero category. Presented by the MD &amp; CEO, CTO, and Head of HR in recognition of outstanding contributions to learning and development initiatives.</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Nov 2018</div>
-      <div>
-        <p class="tl-company">BUP ICT FEST 2018</p>
-        <p class="tl-role">1st Runner Up &mdash; Hackathon Category</p>
-        <p class="tl-desc">Achieved 1st Runner Up in the hackathon competition, demonstrating strong problem-solving and rapid development skills under competitive conditions.</p>
-      </div>
-    </div>
-  </div>
+  <div id="awardsContent"></div>
 </section>
 
 <hr class="divider">
 
 <section class="section" id="certifications">
-  <div class="section-head"><span class="s-num">05</span><h2 class="s-title">Certifications</h2></div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-date">Nov 2025</div>
-      <div>
-        <p class="tl-company">Institute of Business Administration (IBA) &middot; University of Dhaka</p>
-        <p class="tl-role">Advanced Certificate for Management Professionals (ACMP) 4.0</p>
-        <p class="tl-desc"></p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Jun 2020</div>
-      <div>
-        <p class="tl-company">Coursera</p>
-        <p class="tl-role">Natural Language Processing in TensorFlow</p>
-        <p class="tl-desc">Credential ID: 6ZANDPMJL976</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Apr 2020</div>
-      <div>
-        <p class="tl-company">Coursera</p>
-        <p class="tl-role">Neural Networks and Deep Learning</p>
-        <p class="tl-desc">Credential ID: RAAY7E3VQQ8Z</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Mar 2020</div>
-      <div>
-        <p class="tl-company">Coursera</p>
-        <p class="tl-role">Data Visualization with Python</p>
-        <p class="tl-desc">Credential ID: MAEPTFAVBMJA</p>
-      </div>
-    </div>
-  </div>
+  <div id="certificationsContent"></div>
 </section>
 
 <hr class="divider">
 
 <section class="section" id="education">
-  <div class="section-head"><span class="s-num">06</span><h2 class="s-title">Education</h2></div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-date">2015 &mdash; 2019</div>
-      <div>
-        <p class="tl-company">Ahsanullah University of Science and Technology</p>
-        <p class="tl-role">BSc, Computer Science &amp; Engineering</p>
-        <p class="tl-desc">Built a strong foundation in software engineering, algorithms, systems design, and programming — skills that continue to underpin every technical endeavour.</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">2011 &mdash; 2013</div>
-      <div>
-        <p class="tl-company">Police Lines School and College, Rangpur</p>
-        <p class="tl-role">Higher Secondary Certificate (HSC) &mdash; Science</p>
-        <p class="tl-desc"></p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">2003 &mdash; 2011</div>
-      <div>
-        <p class="tl-company">Rangpur Zilla School, Rangpur</p>
-        <p class="tl-role">Secondary School Certificate (SSC) &mdash; Science</p>
-        <p class="tl-desc"></p>
-      </div>
-    </div>
-  </div>
+  <div id="educationContent"></div>
 </section>
 
 <hr class="divider">
 
 <div class="contact-section" id="contact">
-  <p class="contact-headline">Driving Efficiency<br><i>&amp; Innovation.</i></p>
-  <p class="contact-sub">Open to collaborations, automation consulting, and meaningful conversations.</p>
-  <div class="contact-links">
-    <a href="https://www.linkedin.com/in/sham-e-ansari/" target="_blank" rel="noopener" class="c-link">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      LinkedIn
-    </a>
-    <a href="mailto:saprince93@gmail.com" class="c-link">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-      Email
-    </a>
-    <a href="https://github.com/Sham-E-Ansari/" target="_blank" rel="noopener" class="c-link">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-      GitHub
-    </a>
-  </div>
+  <div id="contactContent"></div>
 </div>
 
 <footer>
-  <span>&copy; <span id="footer-year"></span> Sham-E-Ansari</span>
-  <span>Process Automation &amp; R&amp;D &middot; BRAC Bank PLC</span>
+  <span>&copy; <span id="footer-year"></span> <span id="footer-name"></span></span>
+  <span id="footer-content"></span>
 </footer>
 
+<script src="content/content.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
