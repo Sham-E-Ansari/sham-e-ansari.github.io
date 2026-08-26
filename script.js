@@ -11,7 +11,6 @@
   var hero = content.hero;
   document.getElementById('heroText').innerHTML = '<p class="hero-eyebrow">' + hero.eyebrow + '</p><h1 class="hero-name">' + hero.titleFirst + '<br><i>' + hero.titleSecond + '</i></h1><p class="hero-sub"><strong>' + hero.lead + '</strong><br>' + hero.description + '</p><div class="hero-actions"><a href="#contact" class="btn">' + hero.primaryAction + '</a><a href="#experience" class="btn-text">' + hero.secondaryAction + '</a></div>';
   document.getElementById('heroPhoto').innerHTML = '<img src="' + content.photo.src + '" alt="' + content.photo.alt + '">';
-  document.getElementById('scrollLabel').textContent = hero.scrollLabel;
 
   function sectionHead(number, title) {
     return '<div class="section-head"><span class="s-num">' + number + '</span><h2 class="s-title">' + title + '</h2></div>';
