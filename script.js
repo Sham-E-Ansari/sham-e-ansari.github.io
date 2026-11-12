@@ -1,6 +1,6 @@
 (function () {
   var content = window.portfolioContent;
-  var sectionNames = [['about', 'About'], ['experience', 'Experience'], ['skills', 'Skills'], ['awards', 'Awards'], ['certifications', 'Certifications'], ['education', 'Education'], ['contact', 'Contact']];
+  var sectionNames = [['about', 'About'], ['projects', 'Projects'], ['experience', 'Experience'], ['skills', 'Skills'], ['awards', 'Awards'], ['certifications', 'Certifications'], ['publications', 'Publications'], ['education', 'Education'], ['contact', 'Contact']];
 
   document.title = content.siteTitle;
   document.getElementById('navLinks').innerHTML = sectionNames.map(function (section) {
@@ -16,7 +16,8 @@
   }
   function timeline(items) {
     return '<div class="timeline">' + items.map(function (item) {
-      return '<div class="tl-item"><div class="tl-date">' + item[0] + '</div><div><p class="tl-company">' + item[1] + '</p><p class="tl-role">' + item[2] + '</p><p class="tl-desc">' + item[3] + '</p></div></div>';
+      var image = item[4] ? '<a class="tl-img" href="' + item[4] + '" target="_blank" rel="noopener"><img src="' + item[4] + '" alt="' + item[2] + '" loading="lazy" onerror="this.parentNode.remove()"></a>' : '';
+      return '<div class="tl-item"><div class="tl-date">' + item[0] + '</div><div><p class="tl-company">' + item[1] + '</p><p class="tl-role">' + item[2] + '</p><p class="tl-desc">' + item[3] + '</p>' + image + '</div></div>';
     }).join('') + '</div>';
   }
   function dateFromMonthYear(value) {
@@ -33,25 +34,26 @@
     var startDate = dateFromMonthYear(item[0]);
     return !earliest || startDate < earliest ? startDate : earliest;
   }, null);
-  var bracBankStart = content.experience.filter(function (item) {
-    return item[1].indexOf('BRAC Bank') !== -1;
-  }).reduce(function (earliest, item) {
-    var startDate = dateFromMonthYear(item[0]);
-    return !earliest || startDate < earliest ? startDate : earliest;
-  }, null);
   var stats = [
-    [yearsSince(experienceStart) + '+', 'Years of experience'],
-    [yearsSince(bracBankStart) + '+', 'Years at BRAC Bank'],
-    [String(content.awards.length), 'Awards & recognitions'],
-    ['CSE', 'BSc, AUST 2019']
+    [content.highlights.automations, 'Automations delivered at BRAC Bank'],
+    [content.highlights.manHoursDaily, 'Man-hours saved every day'],
+    [content.highlights.liveBots, 'Bots in live production'],
+    [yearsSince(experienceStart) + '+', 'Years of experience']
   ];
+  function projectCards(items) {
+    return '<div class="projects-grid">' + items.map(function (p) {
+      return '<article class="proj' + (p.featured ? ' featured' : '') + '"><div class="proj-meta"><span>' + p.org + '</span><span>' + p.date + '</span></div><h3 class="proj-title">' + p.name + '</h3><p class="proj-desc">' + p.desc + '</p><div class="proj-tags">' + p.tags.map(function (t) { return '<span>' + t + '</span>'; }).join('') + '</div>' + (p.link ? '<a class="proj-link" href="' + p.link + '" target="_blank" rel="noopener">View on GitHub →</a>' : '') + '</article>';
+    }).join('') + '</div>';
+  }
 
   document.getElementById('aboutContent').innerHTML = sectionHead('01', 'About') + '<div class="about-wrap"><div class="about-text">' + content.about.paragraphs.map(function (paragraph) { return '<p>' + paragraph + '</p>'; }).join('') + '</div><div class="about-col-divider"></div><div class="about-stats">' + stats.map(function (stat) { return '<div class="stat"><span class="stat-n">' + stat[0] + '</span><span class="stat-l">' + stat[1] + '</span></div>'; }).join('') + '</div></div>';
-  document.getElementById('experienceContent').innerHTML = sectionHead('02', 'Experience') + timeline(content.experience);
-  document.getElementById('skillsContent').innerHTML = sectionHead('03', 'Skills') + '<div class="skills-wrap">' + Object.keys(content.skills).map(function (category) { return '<div><p class="skill-cat-label">' + category + '</p><div class="tags">' + content.skills[category].map(function (skill) { return '<span class="tag">' + skill + '</span>'; }).join('') + '</div></div>'; }).join('') + '</div>';
-  document.getElementById('awardsContent').innerHTML = sectionHead('04', 'Honors & Awards') + timeline(content.awards);
-  document.getElementById('certificationsContent').innerHTML = sectionHead('05', 'Certifications') + timeline(content.certifications);
-  document.getElementById('educationContent').innerHTML = sectionHead('06', 'Education') + timeline(content.education);
+  document.getElementById('projectsContent').innerHTML = sectionHead('02', 'Projects') + projectCards(content.projects);
+  document.getElementById('experienceContent').innerHTML = sectionHead('03', 'Experience') + timeline(content.experience);
+  document.getElementById('skillsContent').innerHTML = sectionHead('04', 'Skills') + '<div class="skills-wrap">' + Object.keys(content.skills).map(function (category) { return '<div><p class="skill-cat-label">' + category + '</p><div class="tags">' + content.skills[category].map(function (skill) { return '<span class="tag">' + skill + '</span>'; }).join('') + '</div></div>'; }).join('') + '</div>';
+  document.getElementById('awardsContent').innerHTML = sectionHead('05', 'Honors & Awards') + timeline(content.awards);
+  document.getElementById('certificationsContent').innerHTML = sectionHead('06', 'Certifications') + timeline(content.certifications);
+  document.getElementById('publicationsContent').innerHTML = sectionHead('07', 'Publications') + '<div class="timeline">' + content.publications.map(function (title, index) { return '<div class="tl-item"><div class="tl-date">Paper ' + (index + 1) + '</div><div><p class="tl-role">' + title + '</p></div></div>'; }).join('') + '</div>';
+  document.getElementById('educationContent').innerHTML = sectionHead('08', 'Education') + timeline(content.education);
 
   var contact = content.contact;
   document.getElementById('contactContent').innerHTML = '<p class="contact-headline">' + contact.headlineFirst + '<br><i>' + contact.headlineSecond + '</i></p><p class="contact-sub">' + contact.description + '</p><div class="contact-links">' + contact.links.map(function (link) { return '<a href="' + link[1] + '" target="_blank" rel="noopener" class="c-link">' + link[0] + '</a>'; }).join('') + '</div>';
