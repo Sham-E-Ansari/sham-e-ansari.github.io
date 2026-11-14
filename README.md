@@ -20,6 +20,7 @@ I began my banking career in 2022 as a Young Leader (Management Trainee Officer)
 ## Projects
 
 - **55+ Automations, 300+ Man-Hours Saved Daily** - BRAC Bank PLC (2022 - Present) - 43 live bots across 12 business areas, built in-house in Python (Selenium, OCR, computer vision, local LLM agents, Oracle DB). Includes multiple Bangladesh Bank regulatory reporting processes and a compliance review cycle cut from 15 days to near-instant. Details are confidential.
+- **QueryBuddy - RAG Q&A over Your PDFs** (Nov 2026) - Desktop chat widget that answers questions from your own PDFs with source file and page, using a RAG pipeline on a local ChromaDB vector store and any OpenAI-compatible LLM. [GitHub](https://github.com/Sham-E-Ansari/QueryBudduy)
 - **FlowPilot - Selenium Workflow Builder** (Oct 2026) - Visual builder for creating, recording, running, and exporting Selenium browser workflows. [GitHub](https://github.com/Sham-E-Ansari/flowPilot-selenium-workflow-builder)
 - **DocLens - Personal AI Doc Assistant** (Sep 2026) - Local document portal for browsing PDFs and reviewing AI-generated summaries, keywords, and metadata, backed by a local SQLite database. [GitHub](https://github.com/Sham-E-Ansari/personal-doc-assistant)
 - **Bangla QR Merchant Onboarding Automation** - BRAC Bank PLC (Jul 2026) - Automated the merchant onboarding process with RPA, reducing 32 man-days of daily effort; recognised with the Technology Division Spotlight Award.
@@ -29,10 +30,10 @@ I began my banking career in 2022 as a Young Leader (Management Trainee Officer)
 
 ## Skills
 
-- **Automation and AI:** Agentic AI Development, Artificial Intelligence (AI), Robotic Process Automation (RPA), Large Language Models (LLM), Local LLMs (Qwen, GLM), n8n
+- **Automation and AI:** Agentic AI Development, Artificial Intelligence (AI), Robotic Process Automation (RPA), Large Language Models (LLM), Local LLMs (Qwen, GLM), Retrieval-Augmented Generation (RAG), n8n
 - **Leadership and Management:** Team Leadership, Project Management
 - **Automation Stack:** Selenium, PyAutoGUI, EasyOCR, PaddleOCR, Tesseract OCR, OpenCV, YOLOv5 / YOLOv11
-- **Development and Data:** Python, FastAPI, pandas, openpyxl, PyMuPDF, pdfplumber, PL/SQL, Oracle DB (python-oracledb), SMTP, Application Development
+- **Development and Data:** Python, FastAPI, pandas, openpyxl, PyMuPDF, pdfplumber, ChromaDB (vector database), PL/SQL, Oracle DB (python-oracledb), SMTP, Application Development
 
 ## Languages
 
