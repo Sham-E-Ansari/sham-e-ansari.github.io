@@ -49,6 +49,7 @@ I began my banking career in 2022 as a Young Leader (Management Trainee Officer)
 
 ## Certifications
 
+- Oracle Certified Foundations Associate - Agentic AI Certified Foundations Associate, Oracle University, 2026 (valid until Nov 2028)
 - Leadership Development Workshop - "Rise to the Challenge", BRAC Bank PLC, 2026
 - Advanced Certificate for Management Professionals (ACMP) 4.0 - IBA, University of Dhaka, 2025
 - Certificate of Completion - Project Management, Financial Excellence Limited via BRAC Bank PLC, 2025
@@ -64,7 +65,11 @@ I began my banking career in 2022 as a Young Leader (Management Trainee Officer)
 ## Education
 
 **BSc in Computer Science & Engineering**  
-Ahsanullah University of Science and Technology, 2015 - 2019
+Ahsanullah University of Science and Technology, 2015 - 2019 - CGPA 3.43 / 4.00
+
+Higher Secondary Certificate (HSC), Science - Police Lines School and College, Rangpur, 2013 - GPA 5.00 / 5.00
+
+Secondary School Certificate (SSC), Science - Rangpur Zilla School, Rangpur, 2011 - GPA 5.00 / 5.00
 
 ## Connect
 

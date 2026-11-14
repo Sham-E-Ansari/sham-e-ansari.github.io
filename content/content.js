@@ -63,6 +63,7 @@ window.portfolioContent = {
     ['Nov 2018', 'BUP ICT FEST 2018', '1st Runner Up - Hackathon Category', 'Achieved 1st Runner Up in the hackathon competition, demonstrating strong problem-solving and rapid development skills under competitive conditions.', 'resources/awards/bup-ict-fest-2018.jpg']
   ],
   certifications: [
+    ['Nov 2026', 'Oracle University', 'Oracle Certified Foundations Associate - Agentic AI Certified Foundations Associate', 'Credential ID: 333297189AAI26OFA · Valid until Nov 14, 2028'],
     ['May 2026', 'BRAC Bank PLC', 'Leadership Development Workshop - "Rise to the Challenge"', ''],
     ['Nov 2025', 'Institute of Business Administration (IBA) · University of Dhaka', 'Advanced Certificate for Management Professionals (ACMP) 4.0', ''],
     ['Aug 2025', 'Financial Excellence Limited · via BRAC Bank PLC', 'Certificate of Completion - Project Management', 'Completed an intensive programme covering Agile, Waterfall, and Scrum methodologies, along with project budgeting, timeline planning, risk analysis, and stakeholder management.'],
@@ -75,9 +76,9 @@ window.portfolioContent = {
     'A Neural Network Based Approach for Recognition of Basic Emotions from Speech'
   ],
   education: [
-    ['2015 - 2019', 'Ahsanullah University of Science and Technology', 'BSc, Computer Science & Engineering', 'Built a strong foundation in software engineering, algorithms, systems design, and programming - skills that continue to underpin every technical endeavour.'],
-    ['2011 - 2013', 'Police Lines School and College, Rangpur', 'Higher Secondary Certificate (HSC) - Science', ''],
-    ['2003 - 2011', 'Rangpur Zilla School, Rangpur', 'Secondary School Certificate (SSC) - Science', '']
+    ['2015 - 2019', 'Ahsanullah University of Science and Technology', 'BSc, Computer Science & Engineering', 'CGPA: 3.43 / 4.00. Built a strong foundation in software engineering, algorithms, systems design, and programming - skills that continue to underpin every technical endeavour.'],
+    ['2011 - 2013', 'Police Lines School and College, Rangpur', 'Higher Secondary Certificate (HSC) - Science', 'GPA: 5.00 / 5.00'],
+    ['2003 - 2011', 'Rangpur Zilla School, Rangpur', 'Secondary School Certificate (SSC) - Science', 'GPA: 5.00 / 5.00']
   ],
   contact: {
     headlineFirst: 'Driving Efficiency',
